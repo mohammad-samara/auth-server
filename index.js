@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const server = require('./src/server.js');
 
 // connection details should be .env file
-//const MONGOOSE_URL = 'mongodb://localhost:27017/food-db';
+//const MONGOOSE_URL = 'mongodb://localhost:27017/databaseName';
 
 const mongooseOptions = {
   useNewUrlParser: true,

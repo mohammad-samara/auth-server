@@ -6,11 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR]()
-
-#### Documentaion
-
-- not done yet
+- [submission PR](https://github.com/mohammad-samara/auth-server/pull/1)
 
 ### Setup
 

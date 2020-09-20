@@ -10,21 +10,6 @@ router.post('/signin', basicAuth ,signinHandler);
 router.get('/users', basicAuth ,usersHandler);
 
 
-// function signupHandler(req, res) {
-//   users
-//     .save(req.body)
-//     .then((userData) =>{
-//       console.log('USER DATA:' , userData);
-//       const token = users.generateToken(userData);
-//       return token;
-//     })
-//     .then((token) =>{
-//       console.log('TOKEN:' , token);
-//       res.json({ token });
-//     })
-//     .catch((err) =>res.status(403).send('ERRORRRRR'));
-// }
-
 async function signupHandler (req,res){
   try{
     const user = await users.save(req.body);
@@ -47,10 +32,5 @@ async function usersHandler(req, res) {
     res.json(result);
   });
 }
-
-// async function listHandler (req,res){
-//   const allUsers = await users.get({});
-//   res.json( {users : allUsers} );
-// }
 
 module.exports = router;
