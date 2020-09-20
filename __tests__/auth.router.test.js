@@ -9,7 +9,7 @@ const base64 = require('base-64');
 
 describe('Auth Model',()=>{
   it('POST to /signup to create a new user', ()=>{
-    let obj = {'username': 'reham', 'password': '1234'};
+    let obj = {'username': 'samara', 'password': '1234'};
     return  mockRequest.post('/signup')
       .send(obj)
       .then(result=>{
@@ -27,11 +27,11 @@ describe('Auth Model',()=>{
   //   }
   // }
   it('POST to /signin ', ()=>{
-    let obj = {'username': 'reham', 'password': '1234'};
+    let obj = {'username': 'samara', 'password': '1234'};
     
     let header={
       headers:{
-        'authorization':'reham:1234',
+        'authorization':'samara:1234',
       },
     };
     // let header2=header.headers;
@@ -47,11 +47,11 @@ describe('Auth Model',()=>{
       
   });
   it('GET to /users ', ()=>{
-    let obj = {'username': 'reham', 'password': '1234'};
+    let obj = {'username': 'samara', 'password': '1234'};
     
     let header={
       headers:{
-        'authorization':'reham:1234',
+        'authorization':'samara:1234',
       },
     };
     // let header2=header.headers;
@@ -67,7 +67,7 @@ describe('Auth Model',()=>{
       
   });
   it('catch error ', ()=>{
-    // let obj = {'username': 'reham', 'password': '1234'};
+    // let obj = {'username': 'samara', 'password': '1234'};
     return  mockRequest.post('/signup')
       .send()
       .then(result=>{
