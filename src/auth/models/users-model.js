@@ -29,13 +29,34 @@ class Users extends Model {
   async authenticateBasic(user,pass) {
     const myUser = await this.get({username : user});
     const valid = await bcrypt.compare(pass, myUser[0].password);
-    return valid ? myUser : Promise.reject('wrong password');
+    console.log('valid',myUser[0]);////
+    return valid ? myUser[0] : Promise.reject('wrong password');///
   }
 
   generateToken(user) {
     const token =  jwt.sign({ username: user.username }, SECRET);
     return token;
   }
+
+  async authenticateToken(token) {
+    try {
+      let tokenObject = await jwt.verify(token, SECRET);
+      console.log('token object---------->',tokenObject);
+      let theUser = await this.get({username : tokenObject.username});
+      console.log('theUser---------->',theUser);
+      if (theUser[0]) {
+        return Promise.resolve({
+          tokenObject:tokenObject,user:theUser[0],
+        });
+      } else {
+        return Promise.reject('User is not found!');
+      }
+    } catch (e) {
+      return Promise.reject(e.message);
+    }
+  }
+
+  
 }
 
 module.exports = new Users();

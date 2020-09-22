@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-* [submission PR](https://github.com/mohammad-samara/auth-server/pull/2)
+* [submission PR](https://github.com/mohammad-samara/auth-server/pull/3)
 
 ### Documentation
 <!-- * [jsdoc]() -->
@@ -15,7 +15,7 @@
 
 ### Modules
 
-#### `basic.js` , `500.js`, `404.js`, `mongo.js`, , `user-model.js`, `router.js`, `oauth.js`
+#### `basic.js` , `500.js`, `404.js`, `mongo.js`, , `user-model.js`, `router.js`, `oauth.js`, `bearer.js`
 
 ##### Exported Values and Methods
 
@@ -35,6 +35,8 @@
   * This will authinticate the login process
 * **`oauth.js`**
   * This will make an authorization for the client from third-party.
+* **`bearer.js`**
+  * This will make an authinticate for the client when provided with token.
 
 ### Setup
 
@@ -50,11 +52,13 @@ PORT = 4000
 
 #### Running the app
 
-* `npm start`
+* `node .`
 * Endpoint: `/`
 * Endpoint: `/signup`
 * Endpoint: `/signin`
 * Endpoint: `/users`
+* Endpoint: `/secret`
+* Endpoint: `/secretall`
 
 #### Tests
 
@@ -66,3 +70,4 @@ PORT = 4000
 #### UML
 
 ![UML](./assets/uml12.jpg)
+![UML](./assets/uml13.jpg)

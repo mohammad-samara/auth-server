@@ -10,6 +10,7 @@
 
 function errorHandler(err,req,res,next){
   res.status(500);
+  console.log('server error----------------->',err);
   res.statusMessage = 'Server Error :(';
   res.json({error: 'Server error :('});
 }

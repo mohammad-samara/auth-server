@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const router = require('./auth/router.js');
+const extraRoutes = require('./extra-routes.js');
 const morgan = require('morgan');
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(morgan('dev'));
 // Website Files
 app.use(express.static('./public'));
 app.use(router);
+app.use(extraRoutes);
 
 // app.use('/', router);
 
