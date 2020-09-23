@@ -7,6 +7,13 @@ const SECRET = process.env.SECRET || 'mysecret';
 const userschema = require('./users-schema.js');
 const Model = require('./mongo.js');
 
+const roles ={//capabilities
+  user : ['read'],
+  writer : ['read','create'],
+  editor : ['read','create','update'],
+  admin : ['read','create','update','delete'],
+};
+
   
 class Users extends Model {
   constructor() {
@@ -34,7 +41,7 @@ class Users extends Model {
   }
 
   generateToken(user) {
-    const token =  jwt.sign({ username: user.username }, SECRET);
+    const token =  jwt.sign({ username: user.username, actions: roles[user.role] }, SECRET);
     return token;
   }
 

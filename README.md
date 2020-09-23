@@ -1,13 +1,13 @@
-# LAB - 12
+# LAB - 14
 
 <!-- ## Project: Project Name Here -->
-## OAuth Server
+## Access Control
 
 ### Author: Mohammad Samara
 
 ### Links and Resources
 
-* [submission PR](https://github.com/mohammad-samara/auth-server/pull/3)
+* [submission PR](https://github.com/mohammad-samara/auth-server/pull/5)
 
 ### Documentation
 <!-- * [jsdoc]() -->
@@ -37,6 +37,8 @@
   * This will make an authorization for the client from third-party.
 * **`bearer.js`**
   * This will make an authinticate for the client when provided with token.
+* **`acl.js`**
+  * This will check if the user have the access capabilities based on his role to access some protected routes.
 
 ### Setup
 
@@ -59,6 +61,10 @@ PORT = 4000
 * Endpoint: `/users`
 * Endpoint: `/secret`
 * Endpoint: `/secretall`
+* Endpoint: `/read`
+* Endpoint: `/add`
+* Endpoint: `/change`
+* Endpoint: `/remove`
 
 #### Tests
 
@@ -71,3 +77,4 @@ PORT = 4000
 
 ![UML](./assets/uml12.jpg)
 ![UML](./assets/uml13.jpg)
+![UML](./assets/uml14.jpg)
